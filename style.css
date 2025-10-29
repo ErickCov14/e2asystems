@@ -72,11 +72,6 @@ body {
   text-align: center;
   overflow: hidden;
   color: #ffffff;
-
-  background: 
-    linear-gradient(rgba(8, 29, 46, 0.55), rgba(8, 29, 46, 0.55)),
-    url('img/fondo-tecnologia.png') center center / cover no-repeat;
-  background-attachment: fixed;
 }
 
 .hero::before {
@@ -602,3 +597,4 @@ body {
     margin-top: 40px;
   }
 }
+
