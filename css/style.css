@@ -1,0 +1,664 @@
+/* ================== VARIABLES ================== */
+:root {
+  --azul: #061a2c;
+  --azul-oscuro: #04131f;
+  --cian: #00bcd4;
+  --cian-light: #4defff;
+  --gris: #d3e4ec;
+  --blanco: #ffffff;
+  --texto: #e9faff;
+}
+
+/* ================== RESET ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--azul);
+  color: var(--texto);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ====== PARTICULAS ====== */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* ===========================================================
+   CONTENEDOR GLOBAL 
+   =========================================================== */
+section {
+  padding-left: 8%;
+  padding-right: 8%;
+  scroll-margin-top: 120px;
+}
+
+@media (min-width: 1500px) {
+  section {
+    padding-left: 14%;
+    padding-right: 14%;
+  }
+}
+
+/* ===========================================================
+   NAVBAR
+   =========================================================== */
+.navbar {
+  width: 100%;
+  height: 70px;
+  padding-top: 0;
+  padding-bottom: 0;  
+  padding-left: 4%;
+  padding-right: 4%;
+  background: rgba(4, 19, 31, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 188, 212, 0.20);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100%;  
+  max-height: 65px; 
+  object-fit: contain;
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--cian);
+}
+
+/* NAV DESKTOP */
+.nav-desktop {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-desktop a {
+  text-decoration: none;
+  color: var(--texto);
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+.nav-desktop a:hover {
+  color: var(--cian);
+}
+
+/* HAMBURGUESA */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 28px;
+  background: var(--cian);
+  border-radius: 2px;
+}
+
+/* MENU MÓVIL */
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 65%;
+  height: 100%;
+  background: rgba(4, 19, 31, 0.96);
+  backdrop-filter: blur(10px);
+  padding-top: 110px;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: 0.35s ease-in-out;
+  z-index: 999;
+}
+
+.nav-mobile a {
+  color: var(--blanco);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.nav-mobile.open {
+  right: 0;
+}
+
+/* ===========================================================
+   HERO
+   =========================================================== */
+.hero {
+  height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.btn-cta {
+  background: var(--cian);
+  color: var(--azul);
+  padding: 14px 36px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 137, 155, 0.5);
+  transition: 0.3s;
+}
+
+.btn-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 32px rgba(0, 171, 194, 0.9);
+}
+
+/* ===========================================================
+   SERVICIOS
+   =========================================================== */
+
+#servicios {
+  padding-top: 50px;
+  padding-bottom: 160px;
+}
+
+.servicios h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.servicios .subtitulo {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 60px;
+  color: var(--gris);
+}
+
+/* === GRID === */
+.servicios-grid-foto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+/* === TARJETA === */
+.servicio-foto {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+  height: 260px;
+  background: #000;
+}
+
+/* Imagen base */
+.servicio-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .45s ease;
+}
+
+/* EFECTO HOVER: oscurecer + desenfocar + zoom */
+.servicio-foto:hover img {
+  transform: scale(1.1);
+  filter: brightness(40%) blur(3px);
+}
+
+/* Overlay */
+.servicio-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 22px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  transition: all .35s ease;
+}
+
+/* Título */
+.servicio-overlay h3 {
+  font-size: 1.35rem;
+  margin: 0;
+  color: #fff;
+  transform: translateY(20px);
+  transition: .35s ease;
+}
+
+/* Descripción oculta inicialmente */
+.servicio-descripcion {
+  opacity: 0;
+  color: #e4f7ff;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  transform: translateY(40px);
+  transition: .4s ease;
+}
+
+/* --- HOVER: título sube, texto aparece --- */
+.servicio-foto:hover .servicio-overlay h3 {
+  transform: translateY(0);
+}
+
+.servicio-foto:hover .servicio-descripcion {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 1100px) {
+  .servicios-grid-foto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios-grid-foto {
+    grid-template-columns: 1fr;
+  }
+
+  .servicio-foto {
+    height: 270px;
+  }
+
+  .servicio-descripcion {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================================================
+   PROYECTOS
+   =========================================================== */
+
+#proyectos {
+  padding-top: 50px;
+  padding-bottom: 160px;
+}
+
+.proyectos h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.proyectos .subtitulo {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 60px;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 40px;
+}
+
+.proyecto-card {
+  background: rgba(255,255,255,0.06);
+  padding: 38px 32px;
+  border-radius: 22px;
+  text-align: center;
+  border: 1px solid rgba(0,188,212,0.25);
+  backdrop-filter: blur(10px);
+  transition: 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 0 24px rgba(0,188,212,0.12);
+}
+
+.proyecto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(0,188,212,0.25);
+}
+
+.proyecto-mockup img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 75, 85, 0.35);
+}
+
+/* TÍTULO */
+.proyecto-info h3 {
+  font-size: 1.9rem;
+  color: var(--cian);
+}
+
+/* TEXTO*/
+.proyecto-info p {
+  font-size: 1.05rem;
+  color: var(--gris);
+  line-height: 1.55;
+  padding: 0 10px;
+  min-height: 70px;
+  margin-bottom: 25px;
+}
+
+/* BOTÓN PROYECTO*/
+.proyecto-info .btn-cta {
+  background: var(--cian);
+  color: var(--azul);
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;   
+  top: 0;               
+  transition: 0.25s ease;
+  box-shadow: 0 0 20px rgba(0,188,212,0.28);
+}
+
+.proyecto-info .btn-cta:hover {
+  top: -3px;      
+  background: #00cee9;
+}
+
+/* ===========================================================
+   NOSOTROS
+   =========================================================== */
+
+#nosotros {
+  padding-top: 90px;
+  padding-bottom: 150px;
+}
+
+/* Layout escritorio: texto + imagen lado a lado */
+.nosotros-grid {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nosotros-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.nosotros-texto h2 {
+  font-size: 3rem;
+}
+
+.nosotros-texto p {
+  line-height: 1.7;
+  margin-top: 12px;
+  color: var(--gris);
+}
+
+.nosotros-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nosotros-img img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(0,188,212,0.4);
+  object-fit: cover;
+}
+
+/* ===========================================================
+   RESPONSIVE – EVITAR DESBORDE EN CELULAR
+   =========================================================== */
+
+@media (max-width: 900px) {
+  #nosotros {
+    padding-top: 70px;
+    padding-bottom: 110px;
+  }
+
+  /* Pasar a columna para que no se salga del ancho */
+  .nosotros-grid {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .nosotros-texto h2 {
+    font-size: 2.3rem;
+  }
+
+  .nosotros-texto {
+    max-width: 480px;
+  }
+
+  .nosotros-img img {
+    max-width: 320px;   /* controlamos el máximo en móvil */
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+/* =====================================================
+   CONTACTO
+   ===================================================== */
+
+.contacto {
+  padding: 100px 8%;
+  padding-top: 50px;
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.contacto h2 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.contacto .subtitulo {
+  font-size: 1.2rem;
+  color: var(--cian);
+  margin-bottom: 60px;
+}
+
+.contacto-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Columna izquierda limpia ===== */
+.texto-limpio {
+  flex: 1;
+  text-align: left;
+  color: white;
+}
+
+/* Título */
+.texto-limpio h3 {
+  font-size: 2rem;
+  color: var(--cian);
+  margin-bottom: 25px;
+}
+
+/* Párrafos */
+.texto-limpio p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Redes sociales */
+.texto-limpio .redes img {
+  width: 38px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.texto-limpio .redes img:hover {
+  transform: scale(1.15);
+}
+
+/* ===== PANEL QR ===== */
+.contacto-qr {
+  flex: 1;
+  padding: 45px 35px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  border: 1px solid rgba(0,188,212,0.25);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,188,212,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título panel */
+.contacto-qr h3 {
+  font-size: 1.7rem;
+  color: var(--cian);
+  margin-bottom: 8px;
+}
+
+/* Texto QR */
+.contacto-qr p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  color: #d9ecf4;
+}
+
+/* Imagen QR centrada */
+.qr {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,188,212,0.35);
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+  background: var(--cian);
+  padding: 14px 26px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0,188,212,0.35);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  background: #00a0b9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .contacto-container {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto-limpio {
+    text-align: center;
+  }
+}
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+
+.footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--gris);
+  background: var(--azul-oscuro);
+}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+@media (max-width: 992px) {
+
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proyecto-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nosotros-grid {
+    flex-direction: column;
+  }
+
+  .contacto-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2.7rem;
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+}
