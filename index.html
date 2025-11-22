@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E²A Systems</title>
+
+  <!-- ===== CSS PRINCIPAL ===== -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ===== ICONO ===== -->
+  <link rel="icon" type="image/png" href="img/logo.png" />
+
+  <!-- ===== LIBRERÍAS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js" defer></script>
+
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== FONDO DE PARTÍCULAS ===== -->
+  <div id="particles-js"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo E2A Systems" class="logo-img" />
+    </div>
+
+    <nav class="nav-desktop">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- ===== MENÚ MÓVIL ===== -->
+  <nav class="nav-mobile" id="nav-mobile">
+    <a href="#inicio" onclick="closeMenu()">Inicio</a>
+    <a href="#servicios" onclick="closeMenu()">Servicios</a>
+    <a href="#proyectos" onclick="closeMenu()">Proyectos</a>
+    <a href="#nosotros" onclick="closeMenu()">Nosotros</a>
+    <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Impulso exponencial,<br />soluciones reales.</h1>
+      <p class="hero-sub">Tecnología que transforma la industria automotriz y manufacturera.</p>
+      <a href="#servicios" class="btn-cta">Explorar soluciones</a>
+    </div>
+  </section>
+
+<!-- ===================================================== -->
+<!-- ================== SERVICIOS ======================== -->
+<!-- ===================================================== -->
+
+<section id="servicios" class="servicios">
+  <h2>Nuestras Soluciones</h2>
+  <p class="subtitulo">Transformamos datos, procesos y equipos en sistemas inteligentes conectados.</p>
+
+  <div class="servicios-grid-foto">
+
+    <!-- IA -->
+    <div class="servicio-foto">
+      <img src="img/serv-ia.jpg" alt="IA Industrial">
+      <div class="servicio-overlay">
+        <h3>Inteligencia Artificial Industrial</h3>
+        <p class="servicio-descripcion">
+          Modelos predictivos, algoritmos de visión computacional y sistemas de inferencia automática diseñados para optimizar calidad, reducir variabilidad y anticipar fallas en entornos de producción.
+        </p>
+      </div>
+    </div>
+
+    <!-- Software -->
+    <div class="servicio-foto">
+      <img src="img/serv-software.jpg" alt="Software Industrial">
+      <div class="servicio-overlay">
+        <h3>Desarrollo de Software Industrial</h3>
+        <p class="servicio-descripcion">
+          Soluciones digitales de alto rendimiento para operación continua, integración con procesos productivos, trazabilidad completa y soporte multiplataforma en entornos industriales complejos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Automatización -->
+    <div class="servicio-foto">
+      <img src="img/serv-automatizacion.jpg" alt="Automatización Industrial">
+      <div class="servicio-overlay">
+        <h3>Digitalización y Automatización</h3>
+        <p class="servicio-descripcion">
+          Implementación integral de sistemas que conectan sensores, dispositivos embebidos y líneas de producción para lograr trazabilidad, validación automática y control operativo en tiempo real.
+        </p>
+      </div>
+    </div>
+
+    <!-- Analítica -->
+    <div class="servicio-foto">
+      <img src="img/serv-analitica.jpg" alt="Analítica y Control">
+      <div class="servicio-overlay">
+        <h3>Analítica Avanzada y Control de Procesos</h3>
+        <p class="servicio-descripcion">
+          Plataformas avanzadas de análisis con OEE, SPC y monitoreo continuo, orientadas a mejorar eficiencia, estabilidad de procesos y toma de decisiones basada en datos confiables.
+        </p>
+      </div>
+    </div>
+
+    <!-- PLCs -->
+    <div class="servicio-foto">
+      <img src="img/serv-plc.jpg" alt="PLCs y SCADA">
+      <div class="servicio-overlay">
+        <h3>Integración de PLCs y sistemas SCADA</h3>
+        <p class="servicio-descripcion">
+          Conectividad escalable entre controladores industriales y sistemas de supervisión, asegurando comunicación estable, intercambio seguro de datos y sincronización total con el proceso.
+        </p>
+      </div>
+    </div>
+
+    <!-- Robótica -->
+    <div class="servicio-foto">
+      <img src="img/serv-robotica.jpg" alt="Robótica Avanzada">
+      <div class="servicio-overlay">
+        <h3>Integración Robótica Avanzada</h3>
+        <p class="servicio-descripcion">
+          Diseño e implementación de celdas robotizadas para soldadura, ensamblado y manipulación, con programación optimizada y validación de secuencias para ciclos estables y repetibles.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- ================== PROYECTOS ======================== -->
+<!-- ===================================================== -->
+
+<section id="proyectos" class="proyectos">
+  <h2>Proyectos Destacados</h2>
+  <p class="subtitulo">Soluciones reales implementadas en líneas de producción automotriz.</p>
+
+  <div class="proyectos-grid">
+
+    <!-- 1. LABORDER -->
+    <div class="proyecto-card">
+      <div class="proyecto-mockup">
+        <img src="img/LabOrder.png" alt="LabOrder">
+      </div>
+      <div class="proyecto-info">
+        <h3>LabOrder</h3>
+        <p>Gestor integral de boletas de laboratorio con control de calidad, trazabilidad completa y captura estructurada de mediciones en tiempo real.</p>
+        <a class="btn-cta" href="laborder.html">Conoce más →</a>
+      </div>
+    </div>
+
+    <!-- 2. MYTOOLS -->
+    <div class="proyecto-card">
+      <div class="proyecto-mockup">
+        <img src="img/MyTools.png" alt="MyTools">
+      </div>
+      <div class="proyecto-info">
+        <h3>MyTools</h3>
+        <p>Gestor especializado de herramentales con control de vida útil, inventarios dinámicos y trazabilidad por serial en procesos de producción</p>
+        <a class="btn-cta" href="mytools.html">Conoce más →</a>
+      </div>
+    </div>
+
+    <!-- 3. CVE-GUARDIAN -->
+    <div class="proyecto-card">
+      <div class="proyecto-mockup">
+        <img src="img/CVEGuardian.png" alt="CVE-Guardian">
+      </div>
+      <div class="proyecto-info">
+        <h3>CVE-Guardian</h3>
+        <p>Sistema inteligente de monitoreo de soldadura con análisis en tiempo real, generando alertas automáticas con trazabilidad avanzada del proceso.</p>
+        <a class="btn-cta" href="cveguardian.html">Conoce más →</a>
+      </div>
+    </div>
+
+    <!-- 4. BALANCINGTRACK -->
+    <div class="proyecto-card">
+      <div class="proyecto-mockup">
+        <img src="img/BalancingTrack.png" alt="BalancingTrack">
+      </div>
+      <div class="proyecto-info">
+        <h3>BalancingTrack</h3>
+        <p>Plataforma inteligente que evita el paso de piezas incompletas, garantiza la correcta secuencia de procesos y automatiza el envío de resultados.</p>
+        <a class="btn-cta" href="balancingtrack.html">Conoce más →</a>
+      </div>
+    </div>
+
+    <!-- 5. MYTPM -->
+    <div class="proyecto-card">
+      <div class="proyecto-mockup">
+        <img src="img/MyTPM.png" alt="MyTPM">
+      </div>
+      <div class="proyecto-info">
+        <h3>MyTPM</h3>
+        <p>Digitalización completa del mantenimiento autónomo mediante checklists, evidencia fotográfica y trazabilidad estructurada de todas las actividades.</p>
+        <a class="btn-cta" href="mytpm.html">Conoce más →</a>
+      </div>
+    </div>
+
+    <!-- 6. TURBOTRACK -->
+    <div class="proyecto-card">
+      <div class="proyecto-mockup">
+        <img src="img/TurboTrack.png" alt="TurboTrack">
+      </div>
+      <div class="proyecto-info">
+        <h3>TurboTrack</h3>
+        <p>Solución de integración robótica con visión industrial para trazabilidad completa, validación de procesos y seguimiento en producción.</p>
+        <a class="btn-cta" href="turbotrack.html">Conoce más →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ===================================================== -->
+  <!-- ================== NOSOTROS ======================== -->
+  <!-- ===================================================== -->
+
+  <section id="nosotros" class="nosotros">
+    <div class="nosotros-grid">
+      <div class="nosotros-texto">
+        <h2>Nosotros</h2>
+        <p class="subtitulo">Innovación, ingeniería y visión tecnológica.</p>
+
+        <p>En <strong>E²A Systems</strong> desarrollamos soluciones inteligentes que conectan los procesos con la toma de
+          decisiones. Combinamos experiencia en manufactura, ingeniería de software e inteligencia artificial para
+          transformar datos en acciones reales.</p>
+
+        <p>Nuestra misión es impulsar la digitalización industrial mediante herramientas robustas, escalables y
+          diseñadas para cada planta.</p>
+
+        <p class="firma">“De la visión a la solución, ahora.”</p>
+      </div>
+
+      <div class="nosotros-img">
+        <img src="img/fondo-tecnologia.png" alt="Equipo E2A Systems" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+<!-- ================== CONTACTO ========================= -->
+<!-- ===================================================== -->
+
+<section id="contacto" class="contacto">
+  <h2>Contáctanos</h2>
+  <p class="subtitulo">
+    Hablemos sobre cómo potenciar tu planta con tecnología inteligente.
+  </p>
+
+  <div class="contacto-container">
+
+  <!-- ===== INFORMACIÓN (SIN PANEL) ===== -->
+  <div class="contacto-info texto-limpio">
+    <h3>Información</h3>
+
+    <p><strong>Email:</strong> E2A.Systems@Outlook.com</p>
+    <p><strong>Teléfono:</strong> +52 (844) 104 3394</p>
+    <p><strong>Ubicación:</strong> Arteaga, Coahuila</p>
+    <p><strong>Horario:</strong> L-V · 8:00 AM – 6:00 PM</p>
+
+    <div class="redes">
+      <a href="https://www.linkedin.com/company/e2asystems" target="_blank">
+        <img src="img/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/e2asystems" target="_blank">
+        <img src="img/github.png" alt="GitHub">
+      </a>
+      <a href="mailto:E2A.Systems@Outlook.com">
+        <img src="img/outlook.png" alt="Outlook">
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== PANEL QR ===== -->
+  <div class="contacto-qr">
+    <h3>Contacto directo</h3>
+    <p>Escanea el código QR o envíanos un mensaje por WhatsApp.</p>
+
+    <img src="img/qr-wpp.png" class="qr" alt="QR WhatsApp">
+
+    <a href="https://wa.me/528441043394?text=Hola%20E2A%20Systems,%20quiero%20más%20información."
+       target="_blank"
+       class="btn-whatsapp">
+      Abrir WhatsApp →
+    </a>
+  </div>
+
+</div>
+</section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 E²A Systems — Impulso exponencial, soluciones reales.</p>
+  </footer>
+
+</body>
+
+</html>

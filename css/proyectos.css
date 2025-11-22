@@ -1,0 +1,192 @@
+/* ===========================================================
+   CSS PARA TODAS LAS PÁGINAS DE PROYECTOS
+   =========================================================== */
+
+body {
+  background: var(--azul);
+  color: var(--texto);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================== HERO DEL PROYECTO ================== */
+
+.proyecto-hero {
+  padding-top: 140px;
+  text-align: center;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.proyecto-logo {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0,188,212,0.35);
+}
+
+.proyecto-hero h1 {
+  font-size: 3.2rem;
+  color: var(--cian);
+  margin-bottom: 10px;
+}
+
+.proyecto-hero p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--gris);
+  line-height: 1.6;
+}
+
+/* ================== SECCIONES GENERALES ================== */
+
+.proyecto-section {
+  margin-top: 80px;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.proyecto-section h2 {
+  font-size: 2.2rem;
+  color: var(--cian);
+  margin-bottom: 18px;
+}
+
+.proyecto-section p {
+  font-size: 1.15rem;
+  color: var(--texto);
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+/* ================== TARJETAS ================== */
+
+.card-grid {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,188,212,0.25);
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 22px rgba(0,188,212,0.18);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: var(--cian);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--gris);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* ================== CARRUSEL PREMIUM ================= */
+
+.slider-container {
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 0 25px rgba(0,188,212,0.25);
+  border: 1px solid rgba(0,188,212,0.25);
+  background: rgba(255,255,255,0.05); /* fondo suave */
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+/* IMAGENES: NUNCA SE RECORTAN, SIEMPRE AJUSTAN */
+.slider img {
+  width: 100%;
+  flex-shrink: 0;
+
+  /* Altura ideal de carrusel */
+  height: 380px;
+
+  /* Que NUNCA se recorte */
+  object-fit: contain;
+
+  /* Margen natural */
+  padding: 20px;
+
+  /* Fondo si hay espacio sobrante */
+  background: rgba(3,16,25,0.45);
+
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Botones del carrusel */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,188,212,0.35);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 0 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  background: rgba(0,188,212,0.55);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Móvil */
+@media (max-width: 768px) {
+  
+  .slider img {
+    height: 240px;
+    padding: 14px;
+  }
+
+  .slider-btn {
+    font-size: 2.2rem;
+    padding: 0 14px;
+  }
+}
+
+/* ================== BOTÓN VOLVER ================== */
+
+.volver-btn {
+  display: inline-block;
+  margin-top: 70px;
+  margin-bottom: 90px;
+  background: var(--cian);
+  color: white;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(0,188,212,0.35);
+  transition: 0.3s;
+}
+
+.volver-btn:hover {
+  transform: translateY(-3px);
+  background: #00a3b7;
+}
