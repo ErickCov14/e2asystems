@@ -40,7 +40,7 @@ const translations = {
     proyectos_subtitulo: "Soluciones tecnológicas implementadas en entornos industriales, logísticos y de control avanzado.",
 
     proj_doco_title: "DOCO",
-    proj_doco_desc: "Integrated system for document management, change control, approvals, revision traceability, and access administration within quality processes.",
+    proj_doco_desc: "Sistema integral para la gestión documental, control de cambios, aprobaciones, trazabilidad de revisiones y administración de accesos dentro de procesos de calidad.",
 
     proj_laborder_title: "LabOrder",
     proj_laborder_desc: "Sistema integral para la gestión de boletas de laboratorio, con control estadístico del proceso, trazabilidad completa y captura estructurada de mediciones en tiempo real.",
